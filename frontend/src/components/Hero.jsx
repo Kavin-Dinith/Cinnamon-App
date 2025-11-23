@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section
@@ -7,12 +9,12 @@ export default function Hero() {
           "url('https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "calc(100vh)",
+        height: "calc(100vh)", // full viewport minus navbar
       }}
     >
       {/* Overlay */}
       <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center px-6">
-        <div className="text-center max-w-4xl">
+        <div className="text-center max-w-4xl space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
             Premium Ceylon Cinnamon
           </h1>
@@ -20,9 +22,24 @@ export default function Hero() {
             Experience the world's finest cinnamon, sustainably sourced from
             Sri Lanka.
           </p>
-          <button className="mt-8 bg-amber-700 hover:bg-amber-800 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg">
-            Explore Products
-          </button>
+
+          <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
+            {/* Scroll to About section */}
+            <a
+              href="#about-cinnamon"
+              className="bg-amber-500 hover:bg-amber-600 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg"
+            >
+              Explore About Cinnamon
+            </a>
+
+            {/* Navigate to Products page */}
+            <Link
+              to="/products"
+              className="bg-amber-700 hover:bg-amber-800 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg"
+            >
+              Explore Products
+            </Link>
+          </div>
         </div>
       </div>
     </section>
