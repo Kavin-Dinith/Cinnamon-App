@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Ceylon Cinnamon Sticks (Quills)",
+    "description": "Premium hand-rolled quills. 100% organic and export certified.",
+    "image": "https://example.com/cinnamon-stick.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Cinnamon Powder",
+    "description": "Ultra-fine powder. Farm fresh and aromatic.",
+    "image": "https://example.com/cinnamon-powder.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Cinnamon Oil",
+    "description": "Pure essential oil. Used for aroma, cooking, and wellness.",
+    "image": "https://example.com/cinnamon-oil.jpg"
+  }
+]
