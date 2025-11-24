@@ -58,7 +58,7 @@ export default function About() {
               <div className="text-amber-600 text-5xl mb-2">
                 <FaUserTie />
               </div>
-              <h4 className="font-stackSans font-semibold text-lg">Udakara Silva</h4>
+              <h4 className="font-stackSans font-semibold text-lg">Lasindu Vimukthi</h4>
               <p className="font-googleSans text-gray-600 text-sm">Marketing Director</p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function About() {
                 <FaLaptopCode />
               </div>
               <h4 className="font-stackSans font-semibold text-lg">Nethmi Fernando</h4>
-              <p className="font-googleSans text-gray-600 text-sm">Frontend Developer & QA</p>
+              <p className="font-googleSans text-gray-600 text-sm">QA Engineer</p>
             </div>
           </div>
         </div>

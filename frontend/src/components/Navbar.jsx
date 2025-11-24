@@ -27,7 +27,7 @@ export default function Navbar() {
           {["Home", "Products", "About", "Contact"].map((item) => (
             <Link
               key={item}
-              to={`/${item.toLowerCase()}`}
+              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               className="font-googleSans hover:text-yellow-300 transition-colors duration-300"
             >
               {item}
@@ -61,7 +61,7 @@ export default function Navbar() {
               {["Home", "Products", "About", "Contact"].map((item) => (
                 <Link
                   key={item}
-                  to={`/${item.toLowerCase()}`}
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
                   className="font-googleSans py-2 px-3 rounded-lg hover:bg-amber-500 transition-colors duration-300"
                 >
