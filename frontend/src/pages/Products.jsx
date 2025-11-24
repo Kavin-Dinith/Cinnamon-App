@@ -1,12 +1,8 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import products from "../data/products.json";
 
 export default function ProductsPage() {
   return (
     <div>
-      <Navbar />
-
       <section className="py-16 px-6 md:px-20 bg-gray-50">
         <h2 className="text-4xl font-bold text-center mb-12">
           Our Cinnamon Products
@@ -33,8 +29,6 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
