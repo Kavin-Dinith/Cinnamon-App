@@ -3,18 +3,48 @@
     "id": 1,
     "name": "Ceylon Cinnamon Sticks (Quills)",
     "description": "Premium hand-rolled quills. 100% organic and export certified.",
-    "image": "https://example.com/cinnamon-stick.jpg"
+    "image": "https://www.pgfoodsind.com/cdn/shop/files/OrganicCeylonCinnamonSticks2.png?v=1716402383"
   },
   {
     "id": 2,
     "name": "Cinnamon Powder",
     "description": "Ultra-fine powder. Farm fresh and aromatic.",
-    "image": "https://example.com/cinnamon-powder.jpg"
+    "image": "https://skinfoodie.com.ng/wp-content/uploads/2019/11/skinfood-nigeria-cinnamon-powder-skinfood-nigeria.jpg"
   },
   {
     "id": 3,
     "name": "Cinnamon Oil",
     "description": "Pure essential oil for aroma, cooking, and wellness.",
-    "image": "https://example.com/cinnamon-oil.jpg"
+    "image": "https://www.hshairclinic.co.uk/wp-content/uploads/2025/01/Glass-bottle-of-cinnamon-oil-with-cinnamon-sticks-on-white-wooden-table.webp"
+  },
+  {
+    "id": 4,
+    "name": "Cinnamon Toothpaste",
+    "description": "Natural cinnamon toothpaste for fresh breath and healthy gums.",
+    "image": "https://lh3.googleusercontent.com/gg-dl/ABS2GSldnWCYXQQrlcQtznTEpk0sHHfc1d17m5RnF2tmS8m7eK44eCkmVDIKreBLlxVWu8k_ZpmH7ZJAWLjhzL0WZf-b-jZxayqHB8kgaJmo369tJ4WjeqK6nz1jCU4lZVEbZS26dRFKc2rY13KP9xLuabqM5rb5_HgoAv2fjQYuxWUfN05r-w=s1024-rj"
+  },
+  {
+    "id": 5,
+    "name": "Cinnamon Perfume",
+    "description": "Exquisite cinnamon-infused perfume with long-lasting aroma.",
+    "image": "https://static.wixstatic.com/media/d85560_7f5b40f1f6ce43d5a49c6c72f0c80e46~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Cinnamon Tea",
+    "description": "Aromatic cinnamon tea for a warm and soothing experience.",
+    "image": "https://www.bigbasket.com/media/uploads/recipe/w-l/2687_1_1.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Cinnamon Soap",
+    "description": "Handmade cinnamon soap with antibacterial and aromatic properties.",
+    "image": "https://i.etsystatic.com/6105178/r/il/cadf66/229500216/il_1080xN.229500216.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Cinnamon Honey Spread",
+    "description": "Organic honey infused with premium Ceylon cinnamon.",
+    "image": "https://joyfoodsunshine.com/wp-content/uploads/2016/01/cinnamon-honey-butter-texas-roadhouse-recipe-4.jpg"
   }
 ]
