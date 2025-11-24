@@ -25,16 +25,6 @@ export default function ProductDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50/50">
-      {/* Back Button */}
-      <div className="fixed top-6 left-6 z-50">
-        <button
-          onClick={() => navigate(-1)}
-          className="group flex items-center gap-2.5 bg-white/80 backdrop-blur-xl border border-slate-200 rounded-full px-5 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-        >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          <span className="font-medium text-slate-700">Back</span>
-        </button>
-      </div>
 
       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Left + Right */}
