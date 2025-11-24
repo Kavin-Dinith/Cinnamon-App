@@ -8,13 +8,78 @@ export default function Checkout() {
   const product = products.find((p) => p.slug === slug);
 
   const [quantity, setQuantity] = useState(1);
-  const [customer, setCustomer] = useState({ name: "", email: "", phone: "", address: "" });
+  const [customer, setCustomer] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
 
-  const handleQuantity = (type) => setQuantity((q) => Math.max(1, type === "inc" ? q + 1 : q - 1));
-  const handleChange = (e) => setCustomer({ ...customer, [e.target.name]: e.target.value });
+  // Handle quantity increment/decrement
+  const handleQuantity = (type) =>
+    setQuantity((q) => Math.max(1, type === "inc" ? q + 1 : q - 1));
+
+  // Validation function for individual fields
+  const validateField = (name, value) => {
+    let error = "";
+
+    if (name === "name" && !value.trim()) error = "Name is required";
+
+    if (name === "email") {
+      if (!value.trim()) error = "Email is required";
+      else if (!value.includes("@")) error = "Email must contain @";
+    }
+
+    if (name === "phone") {
+      if (!value.trim()) error = "Phone number is required";
+      else if (value.startsWith("+94")) {
+        if (value.length !== 12) error = "Enter 9 digits after +94";
+      } else if (value.startsWith("0")) {
+        if (value.length !== 10) error = "Enter 10 digits starting with 0";
+      } else {
+        error = "Phone must start with +94 or 0";
+      }
+    }
+
+    if (name === "address" && !value.trim()) error = "Address is required";
+
+    setErrors((prev) => ({ ...prev, [name]: error }));
+    return error === "";
+  };
+
+  // Handle customer input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    let newValue = value;
+
+    // Limit phone input
+    if (name === "phone") {
+      if (value.startsWith("+94")) newValue = value.slice(0, 12);
+      else if (value.startsWith("0")) newValue = value.slice(0, 10);
+      else newValue = value.slice(0, 12);
+    }
+
+    setCustomer((prev) => ({ ...prev, [name]: newValue }));
+    validateField(name, newValue);
+  };
+
   const totalPrice = (product.price * quantity).toFixed(2);
 
+  // Place order via WhatsApp
   const placeOrder = () => {
+    // Validate all fields before submitting
+    const isValid = Object.keys(customer).every((key) =>
+      validateField(key, customer[key])
+    );
+    if (!isValid) return;
+
     const msg = `*Order Summary*
 ----------------------------
 Product: *${product.name}*
@@ -28,8 +93,7 @@ Email: *${customer.email}*
 Phone: *${customer.phone}*
 Address: *${customer.address}*`;
 
-    const whatsappUrl = `https://wa.me/94785369675?text=${encodeURIComponent(msg)}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(`https://wa.me/94785369675?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -41,7 +105,7 @@ Address: *${customer.address}*`;
           <div className="p-5 space-y-3">
             <h2 className="font-stackSans text-xl font-bold text-slate-900">{product.name}</h2>
             <p className="font-googleSans text-sm text-slate-600 leading-relaxed">{product.description}</p>
-            <div className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-transparent bg-clip-text">
+            <div className="font-stackSans text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-transparent bg-clip-text">
               ${product.price.toFixed(2)}
             </div>
 
@@ -49,7 +113,7 @@ Address: *${customer.address}*`;
               <button onClick={() => handleQuantity("dec")} className="p-2 rounded-lg bg-slate-200 hover:bg-slate-300 transition">
                 <Minus className="w-4 h-4 text-slate-700" />
               </button>
-              <span className="text-base font-semibold">{quantity}</span>
+              <span className="font-stackSans text-base font-semibold">{quantity}</span>
               <button onClick={() => handleQuantity("inc")} className="p-2 rounded-lg bg-slate-200 hover:bg-slate-300 transition">
                 <Plus className="w-4 h-4 text-slate-700" />
               </button>
@@ -61,28 +125,44 @@ Address: *${customer.address}*`;
           </div>
         </div>
 
-        {/* Form Card */}
+        {/* Customer Form */}
         <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-md border border-slate-100 p-6 flex flex-col gap-4">
           <h2 className="font-stackSans text-xl font-bold text-slate-900">Customer Information</h2>
 
-          <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
-            <User className="w-4 h-4 text-slate-500" />
-            <input type="text" name="name" placeholder="Full Name" value={customer.name} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none" />
+          {/* Name */}
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
+              <User className="w-4 h-4 text-slate-500" />
+              <input type="text" name="name" placeholder="Full Name" value={customer.name} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none" />
+            </div>
+            {errors.name && <span className="text-red-500 text-xs ml-1">{errors.name}</span>}
           </div>
 
-          <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
-            <Mail className="w-4 h-4 text-slate-500" />
-            <input type="email" name="email" placeholder="Email" value={customer.email} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none" />
+          {/* Email */}
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
+              <Mail className="w-4 h-4 text-slate-500" />
+              <input type="email" name="email" placeholder="Email" value={customer.email} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none" />
+            </div>
+            {errors.email && <span className="text-red-500 text-xs ml-1">{errors.email}</span>}
           </div>
 
-          <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
-            <Phone className="w-4 h-4 text-slate-500" />
-            <input type="tel" name="phone" placeholder="Phone" value={customer.phone} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none" />
+          {/* Phone */}
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
+              <Phone className="w-4 h-4 text-slate-500" />
+              <input type="tel" name="phone" placeholder="+94xxxxxxxxx or 0xxxxxxxxx" value={customer.phone} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none" />
+            </div>
+            {errors.phone && <span className="text-red-500 text-xs ml-1">{errors.phone}</span>}
           </div>
 
-          <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
-            <MapPin className="w-4 h-4 text-slate-500 mt-1" />
-            <textarea name="address" placeholder="Address" value={customer.address} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none h-20 resize-none"></textarea>
+          {/* Address */}
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2 bg-slate-100 p-2.5 rounded-lg">
+              <MapPin className="w-4 h-4 text-slate-500 mt-1" />
+              <textarea name="address" placeholder="Address" value={customer.address} onChange={handleChange} className="font-googleSans bg-transparent w-full text-sm outline-none h-20 resize-none"></textarea>
+            </div>
+            {errors.address && <span className="text-red-500 text-xs ml-1">{errors.address}</span>}
           </div>
 
           <button onClick={placeOrder} className="mt-2 w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white text-sm font-semibold py-3 rounded-lg shadow-md transition-all">

@@ -35,13 +35,13 @@ export default function ProductsPage() {
             placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full md:w-1/3 px-3 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-400 focus:outline-none transition"
+            className="font-googleSans w-full md:w-1/3 px-3 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-400 focus:outline-none transition"
           />
 
           <select
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value)}
-            className="w-full md:w-1/4 px-3 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-400 focus:outline-none transition"
+            className="font-googleSans w-full md:w-1/4 px-3 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-400 focus:outline-none transition"
           >
             <option value="">Sort By</option>
             <option value="name-asc">Name: A → Z</option>
@@ -73,7 +73,7 @@ export default function ProductsPage() {
                 <p className="font-googleSans text-gray-600 text-xs md:text-sm flex-grow mb-1">
                   {item.description}
                 </p>
-                <p className="text-green-600 font-semibold text-sm md:text-base mb-2">
+                <p className="font-stackSans text-green-600 font-semibold text-sm md:text-base mb-2">
                   ${item.price.toFixed(2)}
                 </p>
 
@@ -89,7 +89,7 @@ export default function ProductsPage() {
         </div>
 
         {filteredProducts.length === 0 && (
-          <p className="text-center text-gray-500 mt-8 text-lg">
+          <p className="font-googleSans text-center text-gray-500 mt-8 text-lg">
             No products found.
           </p>
         )}

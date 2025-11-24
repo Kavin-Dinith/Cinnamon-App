@@ -32,7 +32,9 @@ export default function ProductDetail() {
           {/* Image */}
           <div className="lg:w-1/2 flex justify-center lg:justify-start">
             <div className="relative w-full max-w-md">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border border-slate-100 h-72 sm:h-80 md:h-96 flex items-center justify-center">
+              {/* Fixed container for consistent size */}
+              {/* Fixed container for consistent size and zoomed image */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-md border border-slate-100 w-full h-72 sm:h-80 md:h-96 flex items-center justify-center">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -52,7 +54,7 @@ export default function ProductDetail() {
                 {product.description}
               </p>
               <div className="flex items-center gap-2">
-                <p className="text-green-600 font-bold text-lg sm:text-xl">
+                <p className="font-stackSans text-green-600 font-bold text-lg sm:text-xl">
                   ${product.price.toFixed(2)}
                 </p>
                 <span className="text-slate-500 text-sm font-googleSans">
