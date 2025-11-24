@@ -1,10 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+// Pages
 import Home from "./pages/Home";
 import ProductsPage from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -13,12 +17,23 @@ export default function App() {
 
       <div className="pt-16">
         <Routes>
+          {/* Home */}
           <Route path="/" element={<Home />} />
+
+          {/* Products */}
           <Route path="/products" element={<ProductsPage />} />
+
           {/* Nested product route */}
           <Route path="/products/:slug" element={<ProductDetail />} />
+
           {/* Nested checkout route */}
           <Route path="/products/:slug/checkout" element={<Checkout />} />
+
+          {/* About */}
+          <Route path="/about" element={<About />} />
+
+          {/* Contact */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
 
