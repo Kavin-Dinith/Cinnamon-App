@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Ceylon Cinnamon Sticks (Quills)",
+    "slug": "ceylon-cinnamon-sticks",
     "description": "Premium hand-rolled quills. 100% organic and export certified.",
     "longDescription": "Ceylon Cinnamon sticks are hand-rolled from the finest Cinnamomum verum bark. Perfect for cooking, teas, and baking. Known for their delicate aroma, antioxidant properties, and low coumarin content.",
     "benefits": [
@@ -15,6 +16,7 @@
   {
     "id": 2,
     "name": "Cinnamon Powder",
+    "slug": "cinnamon-powder",
     "description": "Ultra-fine powder. Farm fresh and aromatic.",
     "longDescription": "Ceylon Cinnamon powder is perfect for spicing up your dishes and drinks. Organic and farm fresh, it has a fine texture and long-lasting aroma.",
     "benefits": [
@@ -28,6 +30,7 @@
   {
     "id": 3,
     "name": "Cinnamon Oil",
+    "slug": "cinnamon-oil",
     "description": "Pure essential oil for aroma, cooking, and wellness.",
     "longDescription": "Our premium Ceylon Cinnamon oil is extracted from the bark and leaves of the Cinnamomum verum tree. It’s perfect for aromatherapy, massage, and culinary purposes.",
     "benefits": [
@@ -41,6 +44,7 @@
   {
     "id": 4,
     "name": "Cinnamon Toothpaste",
+    "slug": "cinnamon-toothpaste",
     "description": "Natural cinnamon toothpaste for fresh breath and healthy gums.",
     "longDescription": "Our cinnamon toothpaste uses natural ingredients to ensure fresh breath and healthy gums. Free from harmful chemicals and enriched with Ceylon cinnamon for oral care.",
     "benefits": [
@@ -54,6 +58,7 @@
   {
     "id": 5,
     "name": "Cinnamon Perfume",
+    "slug": "cinnamon-perfume",
     "description": "Exquisite cinnamon-infused perfume with long-lasting aroma.",
     "longDescription": "Experience a luxurious and warm fragrance with our cinnamon perfume. Long-lasting and exotic, perfect for daily wear or special occasions.",
     "benefits": [
@@ -67,6 +72,7 @@
   {
     "id": 6,
     "name": "Cinnamon Tea",
+    "slug": "cinnamon-tea",
     "description": "Aromatic cinnamon tea for a warm and soothing experience.",
     "longDescription": "Brew a calming cup of cinnamon tea. It’s aromatic, naturally sweet, and helps you relax after a long day. Ideal for morning or evening tea rituals.",
     "benefits": [
@@ -80,6 +86,7 @@
   {
     "id": 7,
     "name": "Cinnamon Soap",
+    "slug": "cinnamon-soap",
     "description": "Handmade cinnamon soap with antibacterial and aromatic properties.",
     "longDescription": "Our handmade cinnamon soap is gentle on skin and enriched with natural cinnamon. Perfect for daily use with aromatic benefits and antibacterial protection.",
     "benefits": [
@@ -93,6 +100,7 @@
   {
     "id": 8,
     "name": "Cinnamon Honey Spread",
+    "slug": "cinnamon-honey-spread",
     "description": "Organic honey infused with premium Ceylon cinnamon.",
     "longDescription": "Enjoy the sweetness of organic honey with a touch of premium Ceylon cinnamon. Perfect on toast, desserts, or in beverages.",
     "benefits": [

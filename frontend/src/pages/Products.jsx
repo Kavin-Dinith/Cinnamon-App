@@ -1,11 +1,9 @@
 import products from "../data/products.json";
-// At the top of Products.jsx
 import { useNavigate } from "react-router-dom";
 
-
 export default function ProductsPage() {
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <section className="py-16 px-4 md:px-20">
@@ -36,7 +34,7 @@ export default function ProductsPage() {
                 </p>
 
                 <button
-                  onClick={() => navigate(`/product/${item.id}`)}
+                  onClick={() => navigate(`/products/${item.slug}`)}
                   className="font-googleSans mt-4 bg-amber-700 text-white py-2 px-4 rounded-xl hover:bg-amber-800 transition-colors duration-300 font-medium shadow-sm hover:shadow-md"
                 >
                   Read More

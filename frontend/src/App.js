@@ -9,21 +9,19 @@ import Checkout from "./pages/Checkout";
 export default function App() {
   return (
     <Router>
-      {/* Header */}
       <Navbar />
 
-      {/* Main Content */}
-      <div className="pt-16"> {/* optional: padding to offset fixed navbar */}
+      <div className="pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/checkout/:id" element={<Checkout />} />
-          {/* Add more routes here */}
+          {/* Nested product route */}
+          <Route path="/products/:slug" element={<ProductDetail />} />
+          {/* Nested checkout route */}
+          <Route path="/products/:slug/checkout" element={<Checkout />} />
         </Routes>
       </div>
 
-      {/* Footer */}
       <Footer />
     </Router>
   );
