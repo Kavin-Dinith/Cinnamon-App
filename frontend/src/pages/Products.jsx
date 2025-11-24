@@ -4,7 +4,7 @@ export default function ProductsPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <section className="py-16 px-4 md:px-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 tracking-tight text-gray-800">
+        <h2 className="font-stackSans text-4xl md:text-5xl font-bold text-center mb-12 tracking-tight text-gray-800">
           Our Cinnamon Products
         </h2>
 
@@ -23,14 +23,14 @@ export default function ProductsPage() {
               </div>
 
               <div className="p-5 flex flex-col flex-grow">
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="font-stackSans text-lg md:text-xl font-semibold text-gray-900 mb-2">
                   {item.name}
                 </h3>
-                <p className="text-gray-600 text-sm md:text-base flex-grow">
+                <p className="font-googleSans text-gray-600 text-sm md:text-base flex-grow">
                   {item.description}
                 </p>
 
-                <button className="mt-4 bg-amber-700 text-white py-2 px-4 rounded-xl hover:bg-amber-800 transition-colors duration-300 font-medium shadow-sm hover:shadow-md">
+                <button className="font-googleSans mt-4 bg-amber-700 text-white py-2 px-4 rounded-xl hover:bg-amber-800 transition-colors duration-300 font-medium shadow-sm hover:shadow-md">
                   View More
                 </button>
               </div>
