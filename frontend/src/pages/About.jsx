@@ -73,7 +73,7 @@ export default function About() {
                 <FaLaptopCode />
               </div>
               <h4 className="font-stackSans font-semibold text-lg">Pinidu Pramudith</h4>
-              <p className="font-googleSans text-gray-600 text-sm">Web Developer</p>
+              <p className="font-googleSans text-gray-600 text-sm">Frontend Developer</p>
             </div>
             <div className="flex flex-col items-center text-center p-4">
               <div className="text-amber-600 text-5xl mb-2">
