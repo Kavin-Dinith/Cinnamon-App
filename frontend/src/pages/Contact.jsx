@@ -35,8 +35,7 @@ export default function Contact() {
       }
     }
 
-    if (name === "message" && !value.trim())
-      error = "Message cannot be empty";
+    if (name === "message" && !value.trim()) error = "Message cannot be empty";
 
     setErrors((prev) => ({ ...prev, [name]: error }));
     return error === "";
@@ -98,10 +97,8 @@ Message: ${form.message}`;
 
       {/* FIX: grid now forces equal column height */}
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-
         {/* LEFT COLUMN - wrapped in full-height container */}
         <div className="flex flex-col justify-between h-full">
-
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <Mail className="w-6 h-6 text-amber-600" />
@@ -111,11 +108,13 @@ Message: ${form.message}`;
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-6 h-6 text-amber-600" />
-              <span className="font-googleSans text-gray-700">
+              <a
+                href="tel:+94785369675"
+                className="font-googleSans text-gray-700 hover:text-amber-700 transition"
+              >
                 +94 785 369 675
-              </span>
+              </a>
             </div>
-           
           </div>
 
           {/* Business Hours pinned to bottom */}
@@ -125,23 +124,40 @@ Message: ${form.message}`;
             </h3>
 
             <ul className="space-y-1 text-gray-700">
-              <li className="flex justify-between"><span>Monday</span><span>8 AM – 5 PM</span></li>
-              <li className="flex justify-between"><span>Tuesday</span><span>8 AM – 5 PM</span></li>
-              <li className="flex justify-between"><span>Wednesday</span><span>8 AM – 5 PM</span></li>
-              <li className="flex justify-between"><span>Thursday</span><span>8 AM – 5 PM</span></li>
-              <li className="flex justify-between"><span>Friday</span><span>8 AM – 5 PM</span></li>
-              <li className="flex justify-between"><span>Saturday</span><span>9 AM – 3 PM</span></li>
+              <li className="flex justify-between">
+                <span>Monday</span>
+                <span>8 AM – 5 PM</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Tuesday</span>
+                <span>8 AM – 5 PM</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Wednesday</span>
+                <span>8 AM – 5 PM</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Thursday</span>
+                <span>8 AM – 5 PM</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Friday</span>
+                <span>8 AM – 5 PM</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Saturday</span>
+                <span>9 AM – 3 PM</span>
+              </li>
               <li className="flex justify-between text-red-600 font-semibold">
-                <span>Sunday</span><span>Closed</span>
+                <span>Sunday</span>
+                <span>Closed</span>
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* RIGHT COLUMN - form stretches full height */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 h-full">
-
           <input
             type="text"
             name="name"
