@@ -24,18 +24,19 @@ export default function Usage() {
   ];
 
   return (
-    <section className="py-16 px-6 md:px-20 bg-gray-50">
-      <h2 className="font-stackSans text-3xl font-bold mb-12 text-center">Common Uses</h2>
-
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <section className="py-12 md:py-16 px-6 md:px-20 bg-gray-50">
+      <h2 className="font-stackSans text-3xl font-bold mb-8 md:mb-10 text-center">
+        Common Uses
+      </h2>
+      <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
         {usageData.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition transform hover:-translate-y-2 h-full"
+            className="flex flex-col items-center text-center bg-white rounded-xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition transform hover:-translate-y-1 md:hover:-translate-y-2 h-full"
           >
             {item.icon}
-            <h3 className="font-stackSans text-xl font-semibold mb-3">{item.title}</h3>
-            <p className="font-googleSans text-gray-600">{item.description}</p>
+            <h3 className="font-stackSans text-xl font-semibold mb-2 md:mb-3">{item.title}</h3>
+            <p className="font-googleSans text-gray-600 text-sm md:text-base">{item.description}</p>
           </div>
         ))}
       </div>

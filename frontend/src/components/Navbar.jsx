@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi";
+import { Squash as Hamburger } from "hamburger-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   return (
     <nav className="w-full bg-amber-700 text-white shadow-md fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        {/* Logo + Company Name */}
+        {/* Logo */}
         <div className="flex items-center space-x-3">
           <img
             src={logo}
@@ -25,68 +24,54 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/" className="font-googleSans hover:text-yellow-300">
-            Home
-          </Link>
-          <Link
-            to="/products"
-            className="font-googleSans hover:text-yellow-300"
-          >
-            Products
-          </Link>
-          <Link to="/about" className="font-googleSans hover:text-yellow-300">
-            About
-          </Link>
-          <Link to="/contact" className="font-googleSans hover:text-yellow-300">
-            Contact
-          </Link>
+          {["Home", "Products", "About", "Contact"].map((item) => (
+            <Link
+              key={item}
+              to={`/${item.toLowerCase()}`}
+              className="font-googleSans hover:text-yellow-300 transition-colors duration-300"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Hamburger */}
         <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            {isOpen ? (
-              <HiX className="w-6 h-6" />
-            ) : (
-              <HiMenu className="w-6 h-6" />
-            )}
-          </button>
+          <Hamburger
+            toggled={isOpen}
+            toggle={setIsOpen}
+            size={24}
+            duration={0.5}
+            color="#fff"
+          />
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-amber-600 px-4 pt-2 pb-4 space-y-2">
-          <Link
-            to="/"
-            className="font-googleSans block hover:text-yellow-300"
-            onClick={() => setIsOpen(false)}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="md:hidden bg-amber-600 overflow-hidden"
           >
-            Home
-          </Link>
-          <Link
-            to="/products"
-            className="font-googleSans block hover:text-yellow-300"
-            onClick={() => setIsOpen(false)}
-          >
-            Products
-          </Link>
-          <Link
-            to="/about"
-            className="font-googleSans block hover:text-yellow-300"
-            onClick={() => setIsOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            to="/contact"
-            className="font-googleSans block hover:text-yellow-300"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </Link>
-        </div>
-      )}
+            <div className="flex flex-col px-4 py-4 space-y-2">
+              {["Home", "Products", "About", "Contact"].map((item) => (
+                <Link
+                  key={item}
+                  to={`/${item.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="font-googleSans py-2 px-3 rounded-lg hover:bg-amber-500 transition-colors duration-300"
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
