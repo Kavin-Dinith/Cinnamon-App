@@ -33,26 +33,26 @@ export default function Checkout() {
 
   const totalPrice = (product.price * quantity).toFixed(2);
 
-  const placeOrder = () => {
-    const msg = `New Order:
-Product: ${product.name}
-Qty: ${quantity}
-Total: $${totalPrice}
+ const placeOrder = () => {
+  const msg = 
+`*Order Summary*
+----------------------------
+Product: *${product.name}*
+Price (1): $${product.price.toFixed(2)}
+Quantity: *${quantity}*
+Total: *$${totalPrice}*
+----------------------------
+Customer
+Name: *${customer.name}*
+Email: *${customer.email}*
+Phone: *${customer.phone}*
+Address: *${customer.address}*`;
 
-Customer:
-${customer.name}
-${customer.email}
-${customer.phone}
-${customer.address}`;
-
-    const whatsappUrl = `https://wa.me/94785369675?text=${encodeURIComponent(
-      msg
-    )}`;
-    window.open(whatsappUrl, "_blank");
-  };
-
+  const whatsappUrl = `https://wa.me/94785369675?text=${encodeURIComponent(msg)}`;
+  window.open(whatsappUrl, "_blank");
+};
   return (
-    <div className="min-h-screen bg-slate-50/70 px-4 py-20">
+    <div className="min-h-screen bg-slate-50/70 py-20">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
         {/* Product Card */}
         <div className="bg-white/70 backdrop-blur-xl rounded-xl shadow-md border border-slate-100 overflow-hidden">
