@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        // Stack Sans Headline
         stackSans: ["'Stack Sans Headline'", "sans-serif"],
+
+        // Google Sans Flex
+        googleSans: ["'Google Sans Flex'", "sans-serif"],
       },
     },
   },

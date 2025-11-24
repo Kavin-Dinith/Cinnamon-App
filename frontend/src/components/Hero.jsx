@@ -28,7 +28,7 @@ export default function Hero() {
             {/* Scroll to About section */}
             <a
               href="#about-cinnamon"
-              className="bg-amber-500 hover:bg-amber-600 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg"
+              className="font-googleSans bg-amber-500 hover:bg-amber-600 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg"
             >
               Explore About Cinnamon
             </a>
@@ -36,7 +36,7 @@ export default function Hero() {
             {/* Navigate to Products page */}
             <Link
               to="/products"
-              className="bg-amber-700 hover:bg-amber-800 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg"
+              className="font-googleSans bg-amber-700 hover:bg-amber-800 transition text-white py-3 px-6 rounded-lg text-lg shadow-lg"
             >
               Explore Products
             </Link>
