@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProductsPage from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Checkout from "./pages/Checkout";
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
           {/* Add more routes here */}
         </Routes>
       </div>

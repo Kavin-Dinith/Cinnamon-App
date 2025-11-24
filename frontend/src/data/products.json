@@ -3,48 +3,104 @@
     "id": 1,
     "name": "Ceylon Cinnamon Sticks (Quills)",
     "description": "Premium hand-rolled quills. 100% organic and export certified.",
+    "longDescription": "Ceylon Cinnamon sticks are hand-rolled from the finest Cinnamomum verum bark. Perfect for cooking, teas, and baking. Known for their delicate aroma, antioxidant properties, and low coumarin content.",
+    "benefits": [
+      "Helps maintain healthy blood sugar levels",
+      "Rich in antioxidants that fight inflammation",
+      "Promotes better digestion"
+    ],
+    "price": 15.99,
     "image": "https://www.pgfoodsind.com/cdn/shop/files/OrganicCeylonCinnamonSticks2.png?v=1716402383"
   },
   {
     "id": 2,
     "name": "Cinnamon Powder",
     "description": "Ultra-fine powder. Farm fresh and aromatic.",
+    "longDescription": "Ceylon Cinnamon powder is perfect for spicing up your dishes and drinks. Organic and farm fresh, it has a fine texture and long-lasting aroma.",
+    "benefits": [
+      "Enhances flavor naturally",
+      "Supports heart health",
+      "Contains antibacterial properties"
+    ],
+    "price": 9.99,
     "image": "https://skinfoodie.com.ng/wp-content/uploads/2019/11/skinfood-nigeria-cinnamon-powder-skinfood-nigeria.jpg"
   },
   {
     "id": 3,
     "name": "Cinnamon Oil",
     "description": "Pure essential oil for aroma, cooking, and wellness.",
+    "longDescription": "Our premium Ceylon Cinnamon oil is extracted from the bark and leaves of the Cinnamomum verum tree. It’s perfect for aromatherapy, massage, and culinary purposes.",
+    "benefits": [
+      "Boosts immunity",
+      "Reduces inflammation",
+      "Aromatic and soothing"
+    ],
+    "price": 25.5,
     "image": "https://www.hshairclinic.co.uk/wp-content/uploads/2025/01/Glass-bottle-of-cinnamon-oil-with-cinnamon-sticks-on-white-wooden-table.webp"
   },
   {
     "id": 4,
     "name": "Cinnamon Toothpaste",
     "description": "Natural cinnamon toothpaste for fresh breath and healthy gums.",
+    "longDescription": "Our cinnamon toothpaste uses natural ingredients to ensure fresh breath and healthy gums. Free from harmful chemicals and enriched with Ceylon cinnamon for oral care.",
+    "benefits": [
+      "Freshens breath",
+      "Supports healthy gums",
+      "Natural ingredients"
+    ],
+    "price": 6.75,
     "image": "https://lufka.com/cdn/shop/files/LK-CF-TP-202PIC4.jpg?v=1729563886&width=3648"
   },
   {
     "id": 5,
     "name": "Cinnamon Perfume",
     "description": "Exquisite cinnamon-infused perfume with long-lasting aroma.",
+    "longDescription": "Experience a luxurious and warm fragrance with our cinnamon perfume. Long-lasting and exotic, perfect for daily wear or special occasions.",
+    "benefits": [
+      "Long-lasting aroma",
+      "Exotic fragrance",
+      "Premium ingredients"
+    ],
+    "price": 35.0,
     "image": "https://static.wixstatic.com/media/d85560_7f5b40f1f6ce43d5a49c6c72f0c80e46~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
   },
   {
     "id": 6,
     "name": "Cinnamon Tea",
     "description": "Aromatic cinnamon tea for a warm and soothing experience.",
+    "longDescription": "Brew a calming cup of cinnamon tea. It’s aromatic, naturally sweet, and helps you relax after a long day. Ideal for morning or evening tea rituals.",
+    "benefits": [
+      "Calms and relaxes",
+      "Aids digestion",
+      "Rich in antioxidants"
+    ],
+    "price": 7.25,
     "image": "https://www.bigbasket.com/media/uploads/recipe/w-l/2687_1_1.jpg"
   },
   {
     "id": 7,
     "name": "Cinnamon Soap",
     "description": "Handmade cinnamon soap with antibacterial and aromatic properties.",
+    "longDescription": "Our handmade cinnamon soap is gentle on skin and enriched with natural cinnamon. Perfect for daily use with aromatic benefits and antibacterial protection.",
+    "benefits": [
+      "Antibacterial",
+      "Aromatic",
+      "Gentle on skin"
+    ],
+    "price": 5.5,
     "image": "https://i.etsystatic.com/6105178/r/il/cadf66/229500216/il_1080xN.229500216.jpg"
   },
   {
     "id": 8,
     "name": "Cinnamon Honey Spread",
     "description": "Organic honey infused with premium Ceylon cinnamon.",
+    "longDescription": "Enjoy the sweetness of organic honey with a touch of premium Ceylon cinnamon. Perfect on toast, desserts, or in beverages.",
+    "benefits": [
+      "Rich flavor",
+      "Natural sweetness",
+      "Antioxidant-rich"
+    ],
+    "price": 12.0,
     "image": "https://joyfoodsunshine.com/wp-content/uploads/2016/01/cinnamon-honey-butter-texas-roadhouse-recipe-4.jpg"
   }
 ]
