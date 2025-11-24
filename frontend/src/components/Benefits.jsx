@@ -12,7 +12,7 @@ export default function Benefits() {
 
   return (
     <section className="py-20 px-6 md:px-20 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+      <h2 className="font-stackSans text-3xl md:text-4xl font-bold mb-12 text-center">
         Health Benefits
       </h2>
 
@@ -25,7 +25,7 @@ export default function Benefits() {
             <div className="flex-shrink-0 text-amber-600 text-3xl mr-4 mt-1">
               <GiCheckMark />
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">{item}</p>
+            <p className="font-googleSans text-gray-700 text-lg leading-relaxed">{item}</p>
           </div>
         ))}
       </div>

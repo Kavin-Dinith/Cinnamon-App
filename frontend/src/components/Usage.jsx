@@ -25,7 +25,7 @@ export default function Usage() {
 
   return (
     <section className="py-16 px-6 md:px-20 bg-gray-50">
-      <h2 className="text-3xl font-bold mb-12 text-center">Common Uses</h2>
+      <h2 className="font-stackSans text-3xl font-bold mb-12 text-center">Common Uses</h2>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {usageData.map((item, index) => (
@@ -34,8 +34,8 @@ export default function Usage() {
             className="flex flex-col items-center text-center bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition transform hover:-translate-y-2 h-full"
           >
             {item.icon}
-            <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-            <p className="text-gray-600">{item.description}</p>
+            <h3 className="font-stackSans text-xl font-semibold mb-3">{item.title}</h3>
+            <p className="font-googleSans text-gray-600">{item.description}</p>
           </div>
         ))}
       </div>

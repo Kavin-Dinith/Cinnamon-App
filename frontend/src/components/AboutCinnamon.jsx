@@ -15,10 +15,10 @@ export default function AboutCinnamon() {
 
         {/* Content */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="font-stackSans text-3xl md:text-4xl font-bold mb-6">
             What is Ceylon Cinnamon?
           </h2>
-          <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+          <p className="font-googleSans text-gray-700 text-lg md:text-xl leading-relaxed">
             Ceylon Cinnamon, also known as “True Cinnamon,” is a natural spice
             native to Sri Lanka. It is harvested from the inner bark of the
             Cinnamomum verum tree and is widely recognized for its delicate

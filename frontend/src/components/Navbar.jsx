@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi"; // install react-icons
-import logo from "../assets/logo.jpeg";
+import { HiMenu, HiX } from "react-icons/hi";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,14 +11,14 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-amber-700 text-white shadow-md fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        {/* Logo + Company Name */}
         <div className="flex items-center space-x-3">
           <img
             src={logo}
             alt="Cinamo369 Logo"
-            className="w-10 h-10 object-cover"
+            className="w-14 h-14 md:w-16 md:h-16 object-contain filter brightness-0 invert"
           />
-
-          <h1 className="font-stackSans text-2xl font-bold tracking-wide">
+          <h1 className="hidden md:block font-stackSans text-2xl font-bold tracking-wide">
             <Link to="/">Cinamo369</Link>
           </h1>
         </div>
