@@ -15,12 +15,13 @@ export default function Hero() {
       {/* Overlay */}
       <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center px-6">
         <div className="text-center max-w-4xl space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg font-stackSans">
             Premium Ceylon Cinnamon
           </h1>
-          <p className="text-lg md:text-2xl leading-relaxed drop-shadow-md">
-            Experience the world's finest cinnamon, sustainably sourced from
-            Sri Lanka.
+
+          <p className="text-lg md:text-2xl leading-relaxed drop-shadow-md font-stackSans">
+            Experience the world's finest cinnamon, sustainably sourced from Sri
+            Lanka.
           </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
