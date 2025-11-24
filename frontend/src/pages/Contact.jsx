@@ -101,7 +101,7 @@ Message: ${form.message}`;
           <div className="flex items-center gap-3">
             <MapPin className="w-6 h-6 text-amber-600" />
             <span className="font-googleSans text-gray-700">
-              Colombo, Sri Lanka
+              Akuressa, Sri Lanka
             </span>
           </div>
 
