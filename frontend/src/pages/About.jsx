@@ -28,6 +28,14 @@ export default function About() {
           </div>
         </div>
 
+        {/* Mission & Vision */}
+        <div className="text-center">
+          <h3 className="font-stackSans text-2xl font-bold mb-4 text-amber-600">Our Mission</h3>
+          <p className="font-googleSans text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+            To deliver premium, organic Ceylon Cinnamon while promoting sustainable farming practices in Sri Lanka, and providing customers with a natural, high-quality experience.
+          </p>
+        </div>
+
         {/* Founders & Management */}
         <div className="bg-white rounded-xl shadow-md p-8">
           <h3 className="font-stackSans text-2xl font-bold mb-6 text-amber-600">Founders & Management</h3>
@@ -83,15 +91,6 @@ export default function About() {
             </div>
           </div>
         </div>
-
-        {/* Mission & Vision */}
-        <div className="text-center">
-          <h3 className="font-stackSans text-2xl font-bold mb-4 text-amber-600">Our Mission</h3>
-          <p className="font-googleSans text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-            To deliver premium, organic Ceylon Cinnamon while promoting sustainable farming practices in Sri Lanka, and providing customers with a natural, high-quality experience.
-          </p>
-        </div>
-
       </div>
     </section>
   );
