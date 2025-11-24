@@ -9,7 +9,7 @@ export default function Hero() {
           "url('https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "calc(100vh)", // full viewport minus navbar
+        height: "calc(100vh - 4rem)", // subtract navbar height
       }}
     >
       {/* Overlay */}
