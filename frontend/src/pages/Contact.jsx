@@ -13,25 +13,19 @@ export default function Contact() {
   const validateField = (name, value) => {
     let error = "";
 
-    // Name
     if (name === "name" && !value.trim()) error = "Name is required";
 
-    // Email
     if (name === "email") {
-      const emailRegex =
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (!value.trim()) error = "Email is required";
-      else if (!emailRegex.test(value))
-        error = "Enter a valid email address";
+      else if (!emailRegex.test(value)) error = "Enter a valid email address";
     }
 
-    // Phone
     if (name === "phone") {
       if (!value.trim()) error = "Phone number is required";
       else {
-        const phoneRegex = /^\+?\d+$/; // only digits and optional + at start
-        if (!phoneRegex.test(value))
-          error = "Phone can only contain digits (and + at start)";
+        const phoneRegex = /^\+?\d+$/;
+        if (!phoneRegex.test(value)) error = "Only digits allowed";
         else if (value.startsWith("+94") && value.length !== 12)
           error = "Enter 9 digits after +94";
         else if (value.startsWith("0") && value.length !== 10)
@@ -41,7 +35,6 @@ export default function Contact() {
       }
     }
 
-    // Message
     if (name === "message" && !value.trim())
       error = "Message cannot be empty";
 
@@ -51,20 +44,18 @@ export default function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Limit phone input length
     let newValue = value;
+
     if (name === "phone") {
       if (value.startsWith("+94")) newValue = value.slice(0, 12);
       else if (value.startsWith("0")) newValue = value.slice(0, 10);
-      else newValue = value.replace(/[^+\d]/g, ""); // remove invalid chars
+      else newValue = value.replace(/[^+\d]/g, "");
     }
 
     setForm((prev) => ({ ...prev, [name]: newValue }));
     validateField(name, newValue);
   };
 
-  // Check if there are any errors or empty required fields
   const isFormValid = () => {
     return (
       form.name.trim() &&
@@ -105,45 +96,52 @@ Message: ${form.message}`;
         Contact Us
       </h2>
 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-        {/* Contact Info */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <Mail className="w-6 h-6 text-amber-600" />
-            <span className="font-googleSans text-gray-700">
-              info@cinamo369.com
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Phone className="w-6 h-6 text-amber-600" />
-            <span className="font-googleSans text-gray-700">
-              +94 785 369 675
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <MapPin className="w-6 h-6 text-amber-600" />
-            <span className="font-googleSans text-gray-700">
-              Akuressa, Sri Lanka
-            </span>
+      {/* FIX: grid now forces equal column height */}
+      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
+
+        {/* LEFT COLUMN - wrapped in full-height container */}
+        <div className="flex flex-col justify-between h-full">
+
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <Mail className="w-6 h-6 text-amber-600" />
+              <span className="font-googleSans text-gray-700">
+                info@cinamo369.com
+              </span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Phone className="w-6 h-6 text-amber-600" />
+              <span className="font-googleSans text-gray-700">
+                +94 785 369 675
+              </span>
+            </div>
+           
           </div>
 
-          {/* Google Map */}
-          <div className="mt-4 w-full h-64 md:h-80 rounded-lg overflow-hidden">
-            <iframe
-              title="Kavin's Place Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9850692767814!2d80.39251307447849!3d6.132707927582328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae16900579bdbe9%3A0x7909b444e9760171!2sKavin's%20Place!5e0!3m2!1sen!2slk!4v1763983407394!5m2!1sen!2slk"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          {/* Business Hours pinned to bottom */}
+          <div className="mt-6 w-full rounded-lg bg-amber-50 border border-amber-200 p-5 font-googleSans">
+            <h3 className="text-xl font-semibold text-amber-800 mb-3">
+              Business Hours
+            </h3>
+
+            <ul className="space-y-1 text-gray-700">
+              <li className="flex justify-between"><span>Monday</span><span>8 AM – 5 PM</span></li>
+              <li className="flex justify-between"><span>Tuesday</span><span>8 AM – 5 PM</span></li>
+              <li className="flex justify-between"><span>Wednesday</span><span>8 AM – 5 PM</span></li>
+              <li className="flex justify-between"><span>Thursday</span><span>8 AM – 5 PM</span></li>
+              <li className="flex justify-between"><span>Friday</span><span>8 AM – 5 PM</span></li>
+              <li className="flex justify-between"><span>Saturday</span><span>9 AM – 3 PM</span></li>
+              <li className="flex justify-between text-red-600 font-semibold">
+                <span>Sunday</span><span>Closed</span>
+              </li>
+            </ul>
           </div>
+
         </div>
 
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        {/* RIGHT COLUMN - form stretches full height */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 h-full">
+
           <input
             type="text"
             name="name"
